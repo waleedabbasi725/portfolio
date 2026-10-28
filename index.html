@@ -167,6 +167,32 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 @media (max-width:860px){.ielts{grid-template-columns:auto 1fr}.bands{grid-column:1/-1;grid-template-columns:repeat(4,1fr)}}
 @media (max-width:600px){.ielts{grid-template-columns:1fr;justify-items:start;padding:22px}}
 
+.art .img{height:160px}
+.ill{position:relative;z-index:1}
+.seal{position:absolute;right:10px;bottom:14px;width:30px;height:30px;z-index:2;filter:drop-shadow(0 4px 8px rgba(0,0,0,.45))}
+.seal svg{width:100%;height:100%;opacity:1}
+.ill.code{display:flex;align-items:center}
+.win{width:170px;background:#07121a;border:1px solid #2a4a5e;border-radius:6px;overflow:hidden;box-shadow:0 14px 28px -12px #000}
+.wb{height:14px;background:#12222e;display:flex;gap:4px;align-items:center;padding:0 7px}.wb i{width:5px;height:5px;border-radius:50%;background:#3a5a6e}.wb i:first-child{background:#ff5f57}.wb i:nth-child(2){background:#febc2e}.wb i:nth-child(3){background:#28c840}
+.lines{padding:8px 9px;font-family:ui-monospace,Consolas,monospace;font-size:9px;line-height:1.6;color:#d6e4ec;text-align:left}
+.lines p{margin:0;white-space:nowrap}.lines .in{padding-left:10px}
+.lines .k{color:#5ad1f0;font-weight:400}.lines .a{color:#f5c451;font-weight:400}.lines .s{color:#9be29b;font-weight:400}.lines .cm{color:#6c8796}
+.wp{width:38px;height:38px;border-radius:50%;background:#fff;color:#0b5f80;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;font-size:20px;margin-left:-14px;margin-top:46px;border:3px solid #0b7ea6;box-shadow:0 8px 16px -6px #000}
+.ill.board{display:grid;grid-template-columns:repeat(3,56px);gap:7px}
+.board .col{background:rgba(7,18,26,.75);border:1px solid #2a4a5e;border-radius:5px;padding:6px 5px;display:grid;gap:5px;align-content:start;min-height:108px}
+.board span{font-size:8px;color:#9fb3bf;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.board i{height:14px;border-radius:3px;background:#2a6f86}.board i.y{background:#c99a3a}.board i.g{background:#2f9e6e}
+.ill.laptop{display:grid;justify-items:center}
+.scr{width:150px;height:92px;background:#07121a;border:5px solid #22323e;border-radius:6px 6px 0 0;padding:7px}
+.sheet{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;height:100%}
+.sheet i{background:#14303f;border-radius:1px}.sheet i:nth-child(-n+5){background:#0b7ea6}.sheet i:nth-child(5n+1){background:#1c4558}.sheet i:nth-child(13),.sheet i:nth-child(17){background:#2f9e6e}
+.base{width:186px;height:8px;background:linear-gradient(#3a4d5a,#22323e);border-radius:0 0 8px 8px}
+.ill.talk{width:190px;height:120px}
+.bub{position:absolute;padding:7px 12px;border-radius:12px;font-size:12px;font-weight:600;box-shadow:0 10px 20px -10px #000;white-space:nowrap}
+.bub.b1{left:0;top:6px;background:#fff;color:#0b2733;border-bottom-left-radius:2px}
+.bub.b2{right:0;top:50px;background:#0b7ea6;color:#fff;border-bottom-right-radius:2px}
+.abc{position:absolute;left:8px;bottom:0;font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.85)}
+
 /* experience slider */
 .exp-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
 .exp-intro{display:grid;gap:14px}
@@ -193,7 +219,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .brands span i{width:10px;height:10px;border-radius:50%;background:var(--accent)}
 
 /* footer */
-footer{background:var(--bg);padding-block:72px 0}
+footer{background:var(--bg);padding-block:72px 0;border-top:1px solid var(--line)}
 .foot{display:grid;grid-template-columns:1.4fr .8fr .9fr 1.4fr;gap:40px}
 .foot>div{min-width:0;display:grid;gap:14px;align-content:start}
 .foot h4{font-size:15px}
@@ -255,9 +281,9 @@ form .btn{justify-self:start;padding:9px 26px}
     </a>
     <nav class="links" id="links">
       <a href="#projects">Portfolio</a>
+      <a href="#experience">Experience</a>
       <a href="#about">About me</a>
       <a href="#certifications">Certifications</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact me</a>
     </nav>
     <a href="#contact" class="btn btn-primary">Contact</a>
@@ -313,101 +339,8 @@ form .btn{justify-self:start;padding:9px 26px}
   </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>More <span class="hl">About</span> Me</h2>
-      <p>IT graduate with hands-on experience in app and web development, focused on responsive, user-friendly and efficient digital products.</p>
-    </div>
-    <div class="about-grid">
-      <div>
-        <h3 class="col-title">My Education</h3>
-        <div class="edu">
-          <div class="edu-item"><span class="date">2021 - 2025</span><h4>BS Information Technology</h4><span class="org">International Islamic University Islamabad</span><p>Software development, databases, networking and project management. Built the E-Traffic Challan System and Hotel Management System as academic projects.</p></div>
-          <div class="edu-item"><span class="date">2018 - 2020</span><h4>FSc Pre-Engineering</h4><span class="org">Punjab College, Quaid Campus</span></div>
-          <div class="edu-item"><span class="date">2016 - 2018</span><h4>Matric in Science</h4><span class="org">Fazaia Inter College, Lower Topa</span></div>
-        </div>
-      </div>
-      <div>
-        <h3 class="col-title">My Skills</h3>
-        <div class="skills">
-          <div class="skill"><div class="row"><span>HTML</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-          <div class="skill"><div class="row"><span>CSS &amp; Bootstrap</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
-          <div class="skill"><div class="row"><span>JavaScript</span><span>70%</span></div><div class="bar"><i style="width:70%"></i></div></div>
-          <div class="skill"><div class="row"><span>WordPress</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
-          <div class="skill"><div class="row"><span>Kotlin (Android)</span><span>60%</span></div><div class="bar"><i style="width:60%"></i></div></div>
-          <div class="skill"><div class="row"><span>Firebase</span><span>65%</span></div><div class="bar"><i style="width:65%"></i></div></div>
-          <div class="skill"><div class="row"><span>UI/UX Design</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="band">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>My <span class="hl">Latest</span> Projects</h2>
-      <p>Android apps from my apprenticeship at EmergSol Technologies and projects from university.</p>
-    </div>
-    <div class="filters">
-      <button class="on" data-f="all">All</button>
-      <button data-f="android">Android App</button>
-      <button data-f="web">Web Development</button>
-      <button data-f="uni">University</button>
-    </div>
-    <div class="proj-grid">
-      <article class="proj" data-cat="android">
-        <div class="shot"><div class="phone"><span class="mini">TASBIH</span><div class="ring"><b>33</b></div><div class="beads"><i></i><i></i><i></i><i></i><i></i></div><span class="mini">SubhanAllah</span></div></div>
-        <div class="proj-body"><span class="tag">Android · Kotlin</span><h3>Tasbih Counter App</h3><p>Digital tasbih with tap-to-count, target counts and reset for daily dhikr.</p></div>
-      </article>
-      <article class="proj" data-cat="android">
-        <div class="shot"><div class="duo"><div class="phone"><span class="mini">REC 00:42</span><div class="rec"><i></i></div><div class="timeline"><i></i><i></i><i></i><i></i></div><span class="mini">Trim · Merge</span></div><div class="phone alt"><div class="pic"></div><div class="sliders"><i></i><i></i><i></i></div><span class="mini">Photo edit</span></div></div></div>
-        <div class="proj-body"><span class="tag">Android · Kotlin</span><h3>Screen Recorder &amp; Editor</h3><p>Records the screen, then edits videos and photos in one app.</p></div>
-      </article>
-      <article class="proj" data-cat="android uni">
-        <div class="shot"><div class="phone"><span class="mini">E-CHALLAN</span><span class="plate">RIR 4521</span><div class="ticket"><div class="l"></div><div class="l s"></div><div class="amt">Rs 2,000</div><div class="l s"></div></div><div class="paybtn">PAY CHALLAN</div></div></div>
-        <div class="proj-body"><span class="tag">Android · University</span><h3>E-Traffic Challan System</h3><p>Issue and track traffic challans digitally by vehicle number.</p></div>
-      </article>
-      <article class="proj" data-cat="web uni">
-        <div class="shot"><div class="browser"><div class="bt"><i></i><i></i><i></i></div><div class="hb">Book your stay</div><div class="rooms"><div><span>Deluxe</span></div><div><span>Suite</span></div><div><span>Single</span></div></div></div></div>
-        <div class="proj-body"><span class="tag">Web · University</span><h3>Hotel Management System</h3><p>Room browsing, bookings and guest records in HTML, CSS and JavaScript.</p></div>
-      </article>
-    </div>
-    <div class="center"><a href="https://github.com/waleedabbasi725" target="_blank" rel="noopener" class="btn btn-primary">See More</a></div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Always Learning With My <span class="hl">Certifications</span></h2>
-      <p>Courses and training that shaped how I build and work in teams.</p>
-    </div>
-    <div class="ielts">
-      <div class="badge-i"><div><b>6.0</b><small>OVERALL</small></div></div>
-      <div class="info-i"><span class="date">Apr 2026 · Valid until Apr 2028</span><h3>IELTS Academic</h3><p>International English Language Testing System, taken with IDP: overall band 6.0.</p></div>
-      <div class="bands" aria-label="Band scores">
-        <div><b>6.0</b><span>Listening</span></div>
-        <div><b>6.0</b><span>Reading</span></div>
-        <div><b>6.0</b><span>Writing</span></div>
-        <div class="top"><b>6.5</b><span>Speaking</span></div>
-      </div>
-    </div>
-    <div class="art-grid">
-      <article class="art"><div class="img g1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><div class="art-body"><span class="date">Aug – Nov 2023</span><h3>Front-End Development &amp; WordPress</h3><p>National Freelance Training Program (NFTP)</p></div></article>
-      <article class="art"><div class="img g2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></div><div class="art-body"><span class="date">May 2025</span><h3>Scrum Fundamentals</h3><p>SCRUMstudy, based on the SBOK® Guide</p></div></article>
-      <article class="art"><div class="img g3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg></div><div class="art-body"><span class="date">Sep – Dec 2020</span><h3>Basic IT</h3><p>Global Training Institute: typing, Word, PowerPoint, Excel</p></div></article>
-      <article class="art"><div class="img g4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></div><div class="art-body"><span class="date">Sep – Dec 2020</span><h3>English Language</h3><p>Global Training Institute: spoken and written communication</p></div></article>
-    </div>
-  </div>
-</section>
-
 <!-- EXPERIENCE -->
-<section id="experience" class="band">
+<section id="experience">
   <div class="wrap exp-wrap">
     <div class="exp-intro">
       <h2 class="h2">Where I've <span class="hl">Worked</span></h2>
@@ -443,14 +376,100 @@ form .btn{justify-self:start;padding:9px 26px}
   </div>
 </section>
 
-<div class="brands">
+<!-- ABOUT -->
+<section id="about" class="band">
   <div class="wrap">
-    <span><i></i>Rise High Digital</span>
-    <span><i></i>EmergSol Technologies</span>
-    <span><i></i>See Pakistan Tours</span>
-    <span><i></i>IIU Islamabad</span>
+    <div class="sec-head">
+      <h2>More <span class="hl">About</span> Me</h2>
+      <p>IT graduate with hands-on experience in app and web development, focused on responsive, user-friendly and efficient digital products.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3 class="col-title">My Education</h3>
+        <div class="edu">
+          <div class="edu-item"><span class="date">2021 - 2025</span><h4>BS Information Technology</h4><span class="org">International Islamic University Islamabad</span><p>Software development, databases, networking and project management. Built the E-Traffic Challan System and Hotel Management System as academic projects.</p></div>
+          <div class="edu-item"><span class="date">2018 - 2020</span><h4>FSc Pre-Engineering</h4><span class="org">Punjab College, Quaid Campus</span></div>
+          <div class="edu-item"><span class="date">2016 - 2018</span><h4>Matric in Science</h4><span class="org">Fazaia Inter College, Lower Topa</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="col-title">My Skills</h3>
+        <div class="skills">
+          <div class="skill"><div class="row"><span>HTML</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+          <div class="skill"><div class="row"><span>CSS &amp; Bootstrap</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill"><div class="row"><span>JavaScript</span><span>70%</span></div><div class="bar"><i style="width:70%"></i></div></div>
+          <div class="skill"><div class="row"><span>WordPress</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+          <div class="skill"><div class="row"><span>Kotlin (Android)</span><span>60%</span></div><div class="bar"><i style="width:60%"></i></div></div>
+          <div class="skill"><div class="row"><span>Firebase</span><span>65%</span></div><div class="bar"><i style="width:65%"></i></div></div>
+          <div class="skill"><div class="row"><span>UI/UX Design</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>My <span class="hl">Latest</span> Projects</h2>
+      <p>Android apps from my apprenticeship at EmergSol Technologies and projects from university.</p>
+    </div>
+    <div class="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="android">Android App</button>
+      <button data-f="web">Web Development</button>
+      <button data-f="uni">University</button>
+    </div>
+    <div class="proj-grid">
+      <article class="proj" data-cat="android">
+        <div class="shot"><div class="phone"><span class="mini">TASBIH</span><div class="ring"><b>33</b></div><div class="beads"><i></i><i></i><i></i><i></i><i></i></div><span class="mini">SubhanAllah</span></div></div>
+        <div class="proj-body"><span class="tag">Android · Kotlin</span><h3>Tasbih Counter App</h3><p>Digital tasbih with tap-to-count, target counts and reset for daily dhikr.</p></div>
+      </article>
+      <article class="proj" data-cat="android">
+        <div class="shot"><div class="duo"><div class="phone"><span class="mini">REC 00:42</span><div class="rec"><i></i></div><div class="timeline"><i></i><i></i><i></i><i></i></div><span class="mini">Trim · Merge</span></div><div class="phone alt"><div class="pic"></div><div class="sliders"><i></i><i></i><i></i></div><span class="mini">Photo edit</span></div></div></div>
+        <div class="proj-body"><span class="tag">Android · Kotlin</span><h3>Screen Recorder &amp; Editor</h3><p>Records the screen, then edits videos and photos in one app.</p></div>
+      </article>
+      <article class="proj" data-cat="android uni">
+        <div class="shot"><div class="phone"><span class="mini">E-CHALLAN</span><span class="plate">RIR 4521</span><div class="ticket"><div class="l"></div><div class="l s"></div><div class="amt">Rs 2,000</div><div class="l s"></div></div><div class="paybtn">PAY CHALLAN</div></div></div>
+        <div class="proj-body"><span class="tag">Android · University</span><h3>E-Traffic Challan System</h3><p>Issue and track traffic challans digitally by vehicle number.</p></div>
+      </article>
+      <article class="proj" data-cat="web uni">
+        <div class="shot"><div class="browser"><div class="bt"><i></i><i></i><i></i></div><div class="hb">Book your stay</div><div class="rooms"><div><span>Deluxe</span></div><div><span>Suite</span></div><div><span>Single</span></div></div></div></div>
+        <div class="proj-body"><span class="tag">Web · University</span><h3>Hotel Management System</h3><p>Room browsing, bookings and guest records in HTML, CSS and JavaScript.</p></div>
+      </article>
+    </div>
+    <div class="center"><a href="https://github.com/waleedabbasi725" target="_blank" rel="noopener" class="btn btn-primary">See More</a></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Always Learning With My <span class="hl">Certifications</span></h2>
+      <p>Courses and training that shaped how I build and work in teams.</p>
+    </div>
+    <div class="ielts">
+      <div class="badge-i"><div><b>6.0</b><small>OVERALL</small></div></div>
+      <div class="info-i"><span class="date">Apr 2026 · Valid until Apr 2028</span><h3>IELTS Academic</h3><p>International English Language Testing System, taken with IDP: overall band 6.0.</p></div>
+      <div class="bands" aria-label="Band scores">
+        <div><b>6.0</b><span>Listening</span></div>
+        <div><b>6.0</b><span>Reading</span></div>
+        <div><b>6.0</b><span>Writing</span></div>
+        <div class="top"><b>6.5</b><span>Speaking</span></div>
+      </div>
+    </div>
+    <div class="art-grid">
+      <article class="art"><div class="img g1"><div class="ill code"><div class="win"><div class="wb"><i></i><i></i><i></i></div><div class="lines"><p><b class="k">&lt;div</b> <b class="a">class</b>=<b class="s">"hero"</b><b class="k">&gt;</b></p><p class="in"><b class="k">&lt;h1&gt;</b>Hello<b class="k">&lt;/h1&gt;</b></p><p><b class="k">&lt;/div&gt;</b></p><p class="cm">/* responsive */</p></div></div><div class="wp">W</div></div><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6.5" fill="#f5c451"/><circle cx="12" cy="9" r="4" fill="none" stroke="#b8862a" stroke-width="1.2"/><path d="M8 14l-2 8 3-2 2 3 1-7M16 14l2 8-3-2-2 3-1-7" fill="#1fb3dc"/></svg></span></div><div class="art-body"><span class="date">Aug – Nov 2023</span><h3>Front-End Development &amp; WordPress</h3><p>National Freelance Training Program (NFTP)</p></div></article>
+      <article class="art"><div class="img g2"><div class="ill board"><div class="col"><span>To do</span><i></i><i></i><i></i></div><div class="col"><span>Doing</span><i class="y"></i><i class="y"></i></div><div class="col"><span>Done</span><i class="g"></i><i class="g"></i><i class="g"></i></div></div><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6.5" fill="#f5c451"/><circle cx="12" cy="9" r="4" fill="none" stroke="#b8862a" stroke-width="1.2"/><path d="M8 14l-2 8 3-2 2 3 1-7M16 14l2 8-3-2-2 3-1-7" fill="#1fb3dc"/></svg></span></div><div class="art-body"><span class="date">May 2025</span><h3>Scrum Fundamentals</h3><p>SCRUMstudy, based on the SBOK® Guide</p></div></article>
+      <article class="art"><div class="img g3"><div class="ill laptop"><div class="scr"><div class="sheet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="base"></div></div><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6.5" fill="#f5c451"/><circle cx="12" cy="9" r="4" fill="none" stroke="#b8862a" stroke-width="1.2"/><path d="M8 14l-2 8 3-2 2 3 1-7M16 14l2 8-3-2-2 3-1-7" fill="#1fb3dc"/></svg></span></div><div class="art-body"><span class="date">Sep – Dec 2020</span><h3>Basic IT</h3><p>Global Training Institute: typing, Word, PowerPoint, Excel</p></div></article>
+      <article class="art"><div class="img g4"><div class="ill talk"><div class="bub b1">Hello!</div><div class="bub b2">How are you?</div><div class="abc">A B C</div></div><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6.5" fill="#f5c451"/><circle cx="12" cy="9" r="4" fill="none" stroke="#b8862a" stroke-width="1.2"/><path d="M8 14l-2 8 3-2 2 3 1-7M16 14l2 8-3-2-2 3-1-7" fill="#1fb3dc"/></svg></span></div><div class="art-body"><span class="date">Sep – Dec 2020</span><h3>English Language</h3><p>Global Training Institute: spoken and written communication</p></div></article>
+    </div>
+  </div>
+</section>
+
+
 </main>
 
 <footer id="contact">
